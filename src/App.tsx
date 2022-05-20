@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.scss'
 import { Task } from './components/TaskList/TaskList'
 import { TaskCreator } from './components/TaskCreator/TaskCreator'
+import { ErrorModal } from './components/ErrorModal/ErrorModal'
 
   interface Tasks {
     id: number,
@@ -13,6 +14,7 @@ function App() {
   const [inputValue, setInputValue] = useState('')
   const [tasks, setNewTasks] = useState<Tasks[]>([])
   const [taskId, setTaskId] = useState(0)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   function handleTakingInputValue(param: string) {
     setInputValue(param)
@@ -27,7 +29,7 @@ function App() {
 
     setTaskId(taskId + 1)
 
-    inputValue === '' ? alert("insira um nome válido") : setNewTasks(prevTask => [...prevTask, newTask])
+    inputValue === '' ? setIsModalOpen(true) : setNewTasks(prevTask => [...prevTask, newTask])
     
   }
 
@@ -41,6 +43,11 @@ function App() {
   return (
     <>
       <TaskCreator inputValue={inputValue} setInputValue={handleTakingInputValue} handleCreatingNewTask={handleCreatingNewTask} />
+
+      {isModalOpen ?
+       <ErrorModal error={'Insira um título válido'} setIsModalOpen={setIsModalOpen} /> : null
+      }
+
       <Task task={tasks} handleDeletingTask={handleDeletingTask}/>
     </>
   )

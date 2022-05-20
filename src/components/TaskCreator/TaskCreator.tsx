@@ -14,6 +14,7 @@ export function TaskCreator(props: taskCreatorProps) {
             type="text"
             placeholder="O que você precisa fazer hoje?"
             onChange={event => props.setInputValue(event.target.value)}
+            maxLength={50}
             required
          />
          <button
