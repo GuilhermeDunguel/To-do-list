@@ -19,13 +19,16 @@ function App() {
   }
 
   function handleCreatingNewTask() {
+
     const newTask: Tasks = {
       id: taskId,
       title: inputValue,
     }
 
     setTaskId(taskId + 1)
-    setNewTasks(prevTask => [...prevTask, newTask])
+
+    inputValue === '' ? alert("insira um nome válido") : setNewTasks(prevTask => [...prevTask, newTask])
+    
   }
 
   function handleDeletingTask(id: number) {
