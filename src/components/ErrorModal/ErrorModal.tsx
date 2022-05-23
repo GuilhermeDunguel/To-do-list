@@ -1,23 +1,29 @@
 import { X } from 'phosphor-react'
+import { useContext, useEffect } from 'react'
+import { modalContext } from '../../context/ModalContext'
+import { TaskContext } from '../../context/TaskContext'
 import './ErrorModal.scss'
 
-interface ErrorModal {
-   error: string
-   setIsModalOpen: (state:boolean) => void,
-}
+export function ErrorModal() {
 
-export function ErrorModal(props: ErrorModal) {
+   const ModalData = useContext(modalContext)
+
    return (
-      <div className="teste">
-         <div className="error-modal">
-            <button
-               onClick={() => props.setIsModalOpen(false)}
-            >
-               <X className="close-modal" size={32} weight="thin" />
-            </button>
-         
-            <span>{props.error}</span>
-         </div>
-      </div>
+      <>
+         {ModalData.isModalOpen ? 
+            <div className="teste">
+               <div className="error-modal">
+                  <button
+                     onClick={() => ModalData.setIsModalOpen(false)}
+                  >
+                     <X className="close-modal" size={32} weight="thin" />
+                  </button>
+               
+                  <span>Insira um título válido</span>
+               </div>
+            </div>
+          : null
+         }
+      </>
    )
 }

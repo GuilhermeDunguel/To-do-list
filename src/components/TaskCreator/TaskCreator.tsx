@@ -1,25 +1,24 @@
+import { useContext } from 'react'
+import { TaskContext } from '../../context/TaskContext'
 import './TaskCreator.scss'
 
-interface taskCreatorProps {
-   inputValue: string,
-   setInputValue: (param: string) => void,
-   handleCreatingNewTask: () => void,
-}
+export function TaskCreator() {
 
-export function TaskCreator(props: taskCreatorProps) {
+   const data = useContext(TaskContext)
+
    return (
       <section className="task-creator">
          <input 
             className="task-input"
             type="text"
             placeholder="O que você precisa fazer hoje?"
-            onChange={event => props.setInputValue(event.target.value)}
+            onChange={event => data.setInputValue(event.target.value)}
             maxLength={40}
             required
          />
          <button
             className="task-button"
-            onClick={props.handleCreatingNewTask}
+            onClick={data.handleCreatingNewTask}
          >
             Criar
          </button>
