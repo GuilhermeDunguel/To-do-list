@@ -8,7 +8,7 @@
     <ul>
       <li><p>Meu primeiro projeto pessoal usando ReactJS com TypeScript. Ainda estou atualizando ele conforme melhoro meu conhecimento.</p></li>
 
-      <li><p>O projeto conta com o uso de states para gerenciar a criação e exclusão da task. Conta também com o uso de contextos para gerenciar esses estados                        globalmente, de forma que melhore a escalabilidade e manutenção da aplicação, já que pretendo melhorar ela com o tempo.</p></li>
+      <li><p>O projeto conta com o uso de states para gerenciar a criação e exclusão da task. Conta também com o uso de contextos para gerenciar esses estados   globalmente, de forma que melhore a escalabilidade e manutenção da aplicação, já que pretendo melhorar ela com o tempo.</p></li>
     </ul>
   <h3>📌 Desafios:</h3>
   <ul>
