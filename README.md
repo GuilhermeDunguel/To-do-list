@@ -12,7 +12,7 @@
     </ul>
   <h3>📌 Desafios:</h3>
   <ul>
-    <li><p>A passagem de estado entre componentes foi um bom desafio, já que preferi não usar o useContext por não ter conhecimento suficiente ainda. Isso fez com que a aplicação ficasse um pouco bagunçada e confusa</p></li>
+    <li><p>O uso do LocalStorage ainda tem sido um desafio para mim. O objetivo é incluir essa funcionalidade em breve, para assim poder guardar os dados inseridos pelo usuário.</p></li>
   </ul>
   <br>
 <h2>🖥️ Linguagens:</h2>
